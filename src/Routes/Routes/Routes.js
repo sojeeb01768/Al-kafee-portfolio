@@ -3,6 +3,7 @@ import Main from "../../Layout/Main";
 import AboutMe from "../../Pages/AboutMe/AboutMe";
 import Blog from "../../Pages/Blog/Blog";
 import Banner from "../../Pages/Home/Banner/Banner";
+import Contact from "../../Pages/Home/Contact/Contact";
 import Home from "../../Pages/Home/Home/Home";
 import ProjectDetails from "../../Pages/Projects/ProjectDetails";
 import Projects from "../../Pages/Projects/Projects";
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
                 element: <Banner></Banner>
             },
             {
+                path: '/contact',
+                element: <Contact></Contact>
+            },
+            {
                 path: '/skills',
                 element: <Skills></Skills>
             },
@@ -40,7 +45,7 @@ const router = createBrowserRouter([
             {
                 path: '/projects/:id',
                 element: <ProjectDetails></ProjectDetails>,
-                loader: ({ params }) => fetch(`http://localhost:5000/projects/${params.id}`)
+                loader: ({ params }) => fetch(`https://my-portfolio-server-tawny.vercel.app/projects/${params.id}`)
 
             },
         ]
